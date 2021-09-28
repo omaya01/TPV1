@@ -1,0 +1,3 @@
+﻿  Game.cpp
+C:\Users\O\Desktop\ProyectosSDL_2021\ProyectosSDL\HolaSDL\Game.cpp(29,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  HolaSDL.vcxproj -> C:\Users\O\Desktop\ProyectosSDL_2021\ProyectosSDL\bin\HolaSDLDebug.exe
