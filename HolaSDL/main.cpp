@@ -12,10 +12,14 @@ using namespace std;
 
 int main(int argc, char* argv[]){
 
+
+
 	Game g = Game();
 
 	if (g.init() == -1)
 		exit(-1);
+
+	//LGO
 
 	g.run();
 	g.clear();

@@ -1,5 +1,7 @@
 #include "Game.h"
 
+//algo
+
 int Game::init()
 {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
