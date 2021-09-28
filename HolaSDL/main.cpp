@@ -17,6 +17,8 @@ int main(int argc, char* argv[]){
 	if (g.init() == -1)
 		exit(-1);
 
+	//abc
+
 	g.run();
 	g.clear();
 
