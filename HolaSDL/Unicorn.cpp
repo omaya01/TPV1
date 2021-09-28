@@ -22,22 +22,11 @@ void Unicorn::click(int x, int y) {
 	p.x = x;
 	p.y = y;
 	if (SDL_PointInRect(&p, &pos_)) {
-		std::cout << "dead";
 		alive_ = false;
 	}
 }
 
-
-// 
-// 
-// 
-// for() Unicorn* u;
-// vector unicorns
-// for(unicorns) 
-// u.loadmedia
-// u.setrandompos
-// u.draw
-//
-//
-//
-//
+void Unicorn::clear(SDL_Surface* surface, SDL_Window* window) {
+	SDL_FillRect(surface, &pos_, SDL_MapRGB(surface->format, 0, 0, 0));
+	SDL_UpdateWindowSurface(window);
+}

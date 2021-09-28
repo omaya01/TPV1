@@ -10,11 +10,10 @@ protected:
 	bool alive_;
 public:
 	Unicorn(int w, int h);
+	~Unicorn();
 	bool isAlive() { return alive_; };
-	void setDead() { alive_ = false; };
-	//bool loadMedia(std::string filename);
 	void setRandomPos(int w, int h);
 	void draw(SDL_Surface* surface);
-	void clear();
+	void clear(SDL_Surface* surface, SDL_Window* window);
 	void click(int x, int y);
 };

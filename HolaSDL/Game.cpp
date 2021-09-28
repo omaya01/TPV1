@@ -1,7 +1,5 @@
 #include "Game.h"
 
-//algo
-
 int Game::init()
 {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -31,21 +29,35 @@ void Game::run()
     srand(time(NULL));
     
     SDL_Event e;
-    bool uni = false;
     bool quit = false;
+    float time = -1;
+    float best = -1;
     while (!quit) {
-        if (!uni) {
+        if (unicorns.size()==0) {
             for (int i = 0; i < 3; i++) {
                 unicorns.push_back(new Unicorn(SCREEN_WIDTH, SCREEN_HEIGHT));
             }
-            uni = true;
+            if (time != -1) {
+                float aux = (SDL_GetTicks() - time)/1000;
+                cout << "you took " << aux << " seconds to kill all unicorns!\n";
+                if (best != -1 && aux < best)best = aux;
+                else best = aux;
+            }
+            time = SDL_GetTicks();
         }
         
+        int i = 0;
         for (Unicorn* u : unicorns) {
             if (u->isAlive()) {
                 u->draw(screenSurface);
                 SDL_UpdateWindowSurface(window);
             }
+            else {
+                u->clear(screenSurface, window);
+                delete unicorns[i];
+                unicorns.erase(unicorns.begin() + i);
+            }
+            i++;
         }
 
         bool clicked = false;
@@ -61,6 +73,7 @@ void Game::run()
             }
         }        
     }
+    cout << "Your best time was: " << best << "\n";
 }
 
 void Game::clear()
