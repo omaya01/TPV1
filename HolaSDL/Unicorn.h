@@ -10,7 +10,6 @@ protected:
 	bool alive_;
 public:
 	Unicorn(int w, int h);
-	~Unicorn();
 	bool isAlive() { return alive_; };
 	void setRandomPos(int w, int h);
 	void draw(SDL_Surface* surface);

@@ -74,6 +74,11 @@ void Game::run()
         }        
     }
     cout << "Your best time was: " << best << "\n";
+
+    for (int i = 0; i < unicorns.size(); i++) {
+        delete unicorns[i];
+    }
+    unicorns.clear();
 }
 
 void Game::clear()
